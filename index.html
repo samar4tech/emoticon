@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #292929;
+      }
+      .face {
+        position: relative;
+        width: 5em;
+        height: 5em;
+      }
+      input {
+        position: relative;
+        outline: none;
+        appearance: none;
+        width: 5em;
+        height: 5em;
+        background: linear-gradient(0deg, #c3c3, black);
+        border-radius: 50%;
+
+        box-shadow: 0 0 0 3px #353535, inset 0 0 10px rgba(0, 0, 0, 1);
+        cursor: pointer;
+      }
+      input:checked {
+        box-shadow: 0 0 5px #13b3ff;
+      }
+      input::before,
+      input::after {
+        content: "";
+        position: absolute;
+        width: 0.4em;
+        height: 0.4em;
+        background: linear-gradient(0, #000, #6b6b6b);
+        border-radius: 50%;
+        left: 30%;
+        top: 40%;
+      }
+      input::after {
+        left: 60%;
+      }
+      input:checked::before {
+        /* background: linear-gradient(0, #000, #6b6b6b);     */
+        background: #63cdff;
+        box-shadow: 0 0 5px #13b3ff;
+      }
+      input:checked::after {
+        /* background: linear-gradient(0, #000, #6b6b6b);     */
+        background: #63cdff;
+        box-shadow: 0 0 5px #13b3ff;
+      }
+      .lips {
+        position: absolute;
+        top: 60%;
+        left: 42%;
+        transform: translate(-50%, -50%);
+        width: 0.8em;
+        height: 0.3em;
+
+        background: linear-gradient(0, #000, #6b6b6b);
+        border-radius: 1em;
+      }
+      input:checked + .lips {
+        background: #63cdff;
+        box-shadow: 0 0 5px #13b3ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="face">
+        <input type="checkbox" />
+        <div class="lips"></div>
+      </div>
+    </div>
+  </body>
+</html>
